@@ -13,6 +13,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
+import net.minidev.json.JSONObject;
 import pl.spring.demo.service.BookService;
 import pl.spring.demo.to.BookTo;
 import pl.spring.demo.web.utils.FileUtils;
@@ -86,7 +88,7 @@ public class BookRestServiceTest {
         // then
         response.andExpect(status().isOk());
     }
-    
+
     @Test
     public void testShouldDeleteBook() throws Exception {
         // given
@@ -100,5 +102,5 @@ public class BookRestServiceTest {
         // then
         response.andExpect(status().isOk());
     }
-    
+       
 }
