@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head lang="en">
-    <meta charset="UTF-8"/>
-    <title>Lista książek</title>
+<meta charset="UTF-8" />
+<title>Lista książek</title>
 </head>
 <body>
-    <div th:each="book : ${books}">
-        <p th:text="${book.title}">title</p>
-    </div>
+	<table border="1">
+	
+		<tr>
+			<th>ID</th>
+			<th>Tytuł</th>
+			<th>Autorzy</th>
+			<th>Usuń</th>
+		</tr>
+		<tr th:each="book : ${books}">
+			<td th:text="${book.id}">id</td>
+			<td th:text="${book.title}">title</td>
+			<td th:text="${book.authors}">authors</td>
+			<td>
+				<form method="post"
+					action="/workshop/books/">
+					<input type="hidden" name="id" th:value="${book.id}" />
+					<input type="hidden" name="title" th:value="${book.title}" />
+					<input type="hidden" name="authors" th:value="${book.authors}" />
+					<button type="submit">Usuń to</button>
+				</form>
+				
+			</td>
+		</tr>
+	</table>
 </body>
 </html>

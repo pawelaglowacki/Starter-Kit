@@ -51,5 +51,4 @@ public class EmbeddedJetty {
         context.getEnvironment().setDefaultProfiles(DEFAULT_PROFILE);
         return context;
     }
-
 }
