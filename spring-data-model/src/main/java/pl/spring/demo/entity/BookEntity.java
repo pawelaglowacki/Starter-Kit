@@ -21,7 +21,20 @@ public class BookEntity implements Serializable {
     )
     private Set<AuthorEntity> authors = new HashSet<>();
 
-    // for hibernate
+    @ManyToOne
+	@JoinColumn(name = "library_id", nullable = false) // musi nalezec do biblioteki
+	private LibraryEntity library;
+    
+    
+    public LibraryEntity getLibrary() {
+		return library;
+	}
+
+	public void setLibrary(LibraryEntity library) {
+		this.library = library;
+	}
+
+	// for hibernate
     protected BookEntity() {
 }
 
