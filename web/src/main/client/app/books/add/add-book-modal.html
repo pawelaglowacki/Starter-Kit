@@ -1,13 +1,24 @@
 <div>
-    <form novalidate>
-        <div class="modal-header">
-            <h3 class="modal-title">Sample</h3>
-        </div>
-        <div class="modal-body">
-            <p>TEST</p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-warning" ng-click="$dismiss()">Close</button>
-        </div>
-    </form>
+	<form novalidate>
+		<div class="modal-header">
+			<h3 class="modal-title">Dodawnaie ksiazki</h3>
+		</div>
+		<div class="modal-body">
+			<p>Dodaj ksiazke. Ksiazka musi posiadac autora.</p>
+		
+			<input type="text" ng-model="title" required>
+			<button ng-click="addBooks()" ng-disabled="myApp.$invalid || authors.length == 0">Dodaj
+			Ksiazke</button>
+			</p>
+			
+		</div>
+		<div class="modal-footer">
+		
+			<p>
+				<button ng-click="addAuthor()">Dodaj Autora</button>
+			</p>
+
+			<button class="btn btn-warning" ng-click="$dismiss()">Close</button>
+		</div>
+	</form>
 </div>
